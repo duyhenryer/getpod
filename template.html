@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Getpod</title>
+    <link rel="stylesheet" href="/static/picnic.min.css">
+    <link rel="stylesheet" href="/static/site.css">
+    <style>
+      body {
+        background-color: #f0f0f0; /* Use a light background color */
+        font-family: 'Roboto', sans-serif; /* Use the Roboto font */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        height: 100vh; /* Ensure full viewport height */
+      }
+      main.site {
+        background: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        text-align: center; /* Center text within the main container */
+      }
+      .card {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 20px;
+        background-color: #fff;
+      }
+      header h2 {
+        color: #333; /* Change text color */
+      }
+      footer h3 {
+        margin: 10px 0;
+        font-weight: bold;
+      }
+      .label {
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+      .label.success {
+        background-color: #4CAF50; /* Green color for success label */
+        color: #fff;
+      }
+      .label.warning {
+        background-color: #FFC107; /* Yellow color for warning label */
+        color: #333;
+      }
+      .label.error {
+        background-color: #F44336; /* Red color for error label */
+        color: #fff;
+      }
+      code {
+        background-color: #f0f0f0; /* Gray background for code */
+        padding: 2px 5px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="site">
+      <article class="card">
+        <header>
+          <h2>{{ .Message }}</h2>
+        </header>
+        <footer>
+          <h3>Pod: <span class="label">{{ .Hostname }}</span></h3>
+          <h3>Cluster: <span class="label success">{{ .Cluster }}</span></h3>
+          <h3>Node: <span class="label warning">{{ .Node }}</span></h3>
+          <h3>Zone: <span class="label error">{{ .Zone }}</span></h3>
+          Received request on path <code>{{ .Path }}</code>.
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>
