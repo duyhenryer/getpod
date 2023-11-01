@@ -1,4 +1,4 @@
-module github.com/stepanstipl/k8s-demo-app
+module github.com/duyhenryer/getpod
 
 go 1.13
 
